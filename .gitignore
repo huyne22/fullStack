@@ -1,0 +1,6 @@
+# ko đẩy node_modules lên github
+/node_modules
+/vendor
+/.idea
+.idea
+.env
