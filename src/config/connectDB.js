@@ -4,7 +4,8 @@ const { Sequelize } = require('sequelize');
 // Option 3: Passing parameters separately (other dialects)
 const sequelize = new Sequelize('hoidanit', 'root', null, {
   host: 'localhost',
-  dialect: 'mysql'
+  dialect: 'mysql',
+  logging: false
 });
 
 let connectDB = async () => {
@@ -16,4 +17,4 @@ let connectDB = async () => {
       }
 }
 
-export default connectDB;
+module.exports = connectDB;
