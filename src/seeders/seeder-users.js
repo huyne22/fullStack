@@ -7,9 +7,11 @@ module.exports = {
       firstName: 'Luong',
       lastName: 'Huy',
       address: 'Hoidanit',
+      phoneNumber: '0367304511',
       gender: 1,
-      typeRole: 'ROLE',
-      keyRole: 'R1',
+      image: '',
+      roleId: 'ROLE',
+      positionId: 'R1',
       createdAt: new Date(),
       updatedAt: new Date()
     }]);
