@@ -150,6 +150,7 @@ let createNewUser = (data) => {
 let updateUserData = (data) => {
     return new Promise(async(resolve, reject) => {
         try{
+            console.log("data", data)
             //TH ko truyền id
             if(!data.id){
                 resolve({
@@ -219,10 +220,35 @@ let deleteUserData = async(userId) => {
     })
 }
 
+let getAllCodeService = (typeInput) => {
+    return new Promise (async(resolve, reject) => {
+        try{
+            if(!typeInput){
+                resolve({
+                    errCode: 1,
+                    errMessage: "None typeInput",
+                })
+            }else{
+                let res = {};
+                let data = await db.Allcode.findAll({
+                    where :{ type : typeInput},
+                    raw : true,
+                });
+                res.errCode = 0;
+                res.data = data;
+                resolve(res);
+            }
+        }catch(e){
+            console.log(e);
+        }
+    })
+}
+
 module.exports = {
     handleUserLogin : handleUserLogin,
     getAllUsers : getAllUsers,
     createNewUser : createNewUser,
     updateUserData : updateUserData,
     deleteUserData : deleteUserData,
+    getAllCodeService : getAllCodeService,
 }
