@@ -2,11 +2,6 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('Users', {
-      // phoneNumber: DataTypes.STRING,
-      // gender: DataTypes.BOOLEAN,
-      // image: DataTypes.STRING,
-      // roleId: DataTypes.STRING,
-      // positionId: DataTypes.STRING
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -32,7 +27,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       gender: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING
       },
       image: {
         type: Sequelize.STRING
@@ -57,3 +52,4 @@ down: async(queryInterface, Sequelize) => {
   await queryInterface.dropTable('Users');
 }
 }
+
